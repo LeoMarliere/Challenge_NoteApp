@@ -61,11 +61,15 @@ extension ViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "NoteViewController") as? ViewController else {
+        let model = noteModels[indexPath.row]
+        
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "NoteViewController") as? NoteViewController else {
             return
         }
         
         viewController.title = "Note"
+        viewController.noteTitle = model.title
+        viewController.note = model.note
         navigationController?.pushViewController(viewController, animated: true)
 
     }
