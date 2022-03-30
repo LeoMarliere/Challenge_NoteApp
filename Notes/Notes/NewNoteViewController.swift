@@ -13,7 +13,7 @@ class NewNoteViewController: UIViewController {
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var noteTextField: UITextField!
     
-    var completion: ((String, String) -> Void!)
+    public var completion: ((String, String) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class NewNoteViewController: UIViewController {
                   return
               }
         
-        completion(title,note)
+        completion?(title,note)
     }
 
 }

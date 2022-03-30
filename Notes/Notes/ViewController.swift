@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         title = "Notes List"
         noteTable.delegate = self
         noteTable.dataSource = self
-        noNoteLabel.isHidden = noteModels.isEmpty
+        noNoteLabel.isHidden = !noteModels.isEmpty
     }
     
     
